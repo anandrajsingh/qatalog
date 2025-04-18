@@ -142,7 +142,73 @@ export const Home = () => {
                             </div>
                         </div>
                     </section>
+
+                    <section className="flex flex-col md:flex-row w-full mt-18 mx-4 justify-between">
+                        <div className="md:w-1/4 mb-10 flex flex-col gap-3">
+                            <div className="text-3xl font-bold">Qatalog</div>
+                            <div className="w-3xs">Qatalog Streamlines Knowledge, Integrate Data, And Boosts Team Collaboration With AI.</div>
+                        </div>
+                        <div className="flex md:w-6/10">
+                            <div className="md:w-1/4 flex flex-col gap-3">
+                                <div className="text-xl font-medium">Account</div>
+                                <ul className="text-gray-400">
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Login</a></li>
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Free Trial</a></li>
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Pricing</a></li>
+                                </ul>
+                            </div>
+                            <div className="md:w-1/4 flex flex-col gap-3">
+                                <div className="text-xl font-medium">About</div>
+                                <ul className="text-gray-400">
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Newsroom</a></li>
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Terms of service</a></li>
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                            <div className="md:w-1/4 flex flex-col gap-3">
+                                <div className="text-xl font-medium">Product</div>
+                                <ul className="text-gray-400">
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Search &amp; knowledge</a></li>
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Integrations</a></li>
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Security</a></li>
+                                </ul>
+                            </div>
+                            <div className="md:w-1/4 flex flex-col gap-3">
+                                <div className="text-xl font-medium">Resources</div>
+                                <ul className="text-gray-400">
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">ActionQuery</a></li>
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Enterprise Intelligence</a></li>
+                                    <li className="mb-2"><a href="#" className="hover:font-semibold">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
                 </main>
+                <footer className="flex flex-col-reverse md:flex-row items-center border-t border-gray-600 justify-between px-10 py-4">
+                    <p>&copy; Qatalog 2025. All rights reserved.</p>
+                    <ul className="text-gray-400 flex gap-6">
+                        <li className="mb-2">
+                            <div className="bg-gradient-to-br from-gray-500 to-black border-gray-500 p-3 border-t border-l rounded-full">
+                                <img src="/facebook.png" alt="" className="w-5 h-5 filter invert" />
+                            </div>
+                        </li>
+                        <li className="mb-2">
+                            <div className="bg-gradient-to-br from-gray-500 to-black border-gray-500 p-3 border-t border-l rounded-full">
+                                <img src="/instagram.png" alt="" className="w-5 h-5" />
+                            </div>
+                        </li>
+                        <li className="mb-2">
+                            <div className="bg-gradient-to-br from-gray-500 to-black border-gray-500 p-3 border-t border-l rounded-full">
+                                <img src="/twitter.png" alt="" className="w-5 h-5 filter invert" />
+                            </div>
+                        </li>
+                        <li className="mb-2">
+                        <div className="bg-gradient-to-br from-gray-500 to-black border-gray-500 p-3 border-t border-l rounded-full">
+                                <img src="/linkedin.png" alt="" className="w-5 h-5 filter invert" />
+                            </div>
+                        </li>
+                    </ul>
+                </footer>
             </div>
         </div>
     )
