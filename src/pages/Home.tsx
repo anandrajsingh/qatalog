@@ -30,9 +30,9 @@ export const Home = () => {
 
     return (
         <div className="min-h-screen w-full font-sans items-center flex flex-col bg-black">
-            <div className="flex flex-col w-7/10">
+            <div className="flex flex-col w-full md:w-7/10 ">
                 <header className="flex h-20 items-center justify-between relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-transparent after:via-white after:to-transparent">
-                    <h1 className="text-2xl font-semibold">Qatalog</h1>
+                    <h1 className="text-2xl font-semibold ml-2">Qatalog</h1>
                     <nav className="space-x-6 text-base font-semibold hidden md:flex">
                         <a href="#" className="hover:text-gray-400">Product</a>
                         <a href="#" className="hover:text-gray-400">Resources</a>
@@ -81,7 +81,7 @@ export const Home = () => {
                 </div>
 
                 <main className="flex flex-col items-center w-full">
-                    <section className="flex flex-col items-center justify-center w-full my-30">
+                    <section className="flex flex-col items-center justify-center w-full md:my-30">
                         <div className="text-center text-7xl font-semibold my-10">AI Powered Solutions Designed Specifically for Your Data</div>
                         <div className="text-center text-xl md:w-xl">Effortlessly Connect Your Apps, Documents, and Databases to Streamline Processes and Unlock Greater Efficiency</div>
                         <div className="flex gap-4 my-10">
@@ -92,15 +92,15 @@ export const Home = () => {
                                 Started For Free
                             </button>
                         </div>
-                        <img src={"/image.png"} alt="image" className="mt-20 w-full" />
+                        <img src={"/image.png"} alt="image" className="mt-5 md:mt-20 w-full" />
                     </section>
 
-                    <section className="flex flex-col items-center justify-center w-full">
-                        <div className="flex justify-between items-center w-full">
-                            <div className="text-5xl font-semibold w-xs">Connect Your Knowledge</div>
-                            <div className="text-xl w-md">Qatalog connects your data ecosystem, integrating emails, files, apps in one place</div>
+                    <section className="flex flex-col items-center justify-center w-full mt-10">
+                        <div className="flex flex-col md:flex-row justify-between items-center w-full">
+                            <div className="text-5xl font-semibold md:w-xs text-center md:text-start">Connect Your Knowledge</div>
+                            <div className="text-xl md:w-md text-center md:text-start mt-5">Qatalog connects your data ecosystem, integrating emails, files, apps in one place</div>
                         </div>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 w-full my-20">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 md:gap-4 w-full my-20 mx-5">
                             {knowledgePlatforms.map((knowledge, index) => (
                                 <div key={index} className="bg-gradient-to-b from-[#1f1f1f] to-[#0d0d0d] rounded-2xl p-6 text-center border-t border-l border-gray-700 hover:shadow-lg transition">
                                     <div className="flex items-center justify-center mb-15">
@@ -117,11 +117,11 @@ export const Home = () => {
                             ))}
                         </div>
 
-                        <div className="flex justify-between items-center w-full mt-30">
-                            <div className="text-5xl font-semibold w-lg">Connect &amp; Manage Your Key Data Sources</div>
-                            <div className="text-md w-md">Qatalog connects to data sources, translating requests into queries with secure, permission-based access to information</div>
+                        <div className="flex flex-col md:flex-row justify-between items-center w-full md:mt-30">
+                            <div className="text-5xl font-semibold md:w-lg text-center md:text-start">Connect &amp; Manage Your Key Data Sources</div>
+                            <div className="text-md md:w-md text-center md:text-start mt-5">Qatalog connects to data sources, translating requests into queries with secure, permission-based access to information</div>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full my-20">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full my-10 md:my-20">
                             {dataSources.map((dataSource, index) => (
                                 <div key={index} className="bg-gradient-to-b from-[#1f1f1f] to-[#0d0d0d] rounded-2xl p-6 text-center border-t border-l border-gray-700 hover:shadow-lg transition">
                                     <div className="flex justify-between items-center">
@@ -140,12 +140,12 @@ export const Home = () => {
                         </div>
                     </section>
 
-                    <section className="flex flex-col items-center justify-center w-full my-20">
-                        <div className="flex justify-between items-center w-full">
-                            <div className="text-5xl font-semibold w-2xl">Flexible Pricing Plans for Every Team and Business Size</div>
-                            <div className="text-xl w-lg">Choose the plan that fits your needs, from startups enterprises, with scalable, affordable options.</div>
+                    <section className="flex flex-col items-center justify-center w-full mt-5 md:my-20">
+                        <div className="flex flex-col md:flex-row justify-between items-center w-full">
+                            <div className="text-5xl font-semibold md:w-2xl text-center md:text-start">Flexible Pricing Plans for Every Team and Business Size</div>
+                            <div className="text-xl md:w-lg text-center md:text-center mt-5">Choose the plan that fits your needs, from startups enterprises, with scalable, affordable options.</div>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full my-20">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full my-10 md:my-20">
                             {plans.map((plan, index) => (
                                 <div key={index} className="bg-gradient-to-b from-[#1f1f1f] to-[#0d0d0d] rounded-2xl p-6 text-center border border-gray-800 hover:shadow-lg transition">
                                     <div className="flex justify-between items-center">
@@ -181,10 +181,10 @@ export const Home = () => {
 
                     <section className="flex flex-col md:flex-row w-full mt-18 mx-4 justify-between">
                         <div className="md:w-1/4 mb-10 flex flex-col gap-3">
-                            <div className="text-3xl font-bold">Qatalog</div>
-                            <div className="w-3xs">Qatalog Streamlines Knowledge, Integrate Data, And Boosts Team Collaboration With AI.</div>
+                            <div className="text-3xl font-bold mx-6">Qatalog</div>
+                            <div className="md:w-3xs mx-6">Qatalog Streamlines Knowledge, Integrate Data, And Boosts Team Collaboration With AI.</div>
                         </div>
-                        <div className="flex md:w-6/10">
+                        <div className="flex md:w-6/10 mx-2">
                             <div className="md:w-1/4 flex flex-col gap-3">
                                 <div className="text-xl font-medium">Account</div>
                                 <ul className="text-gray-400">
