@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export const Home = () => {
 
     const knowledgePlatforms = [
@@ -24,18 +26,20 @@ export const Home = () => {
         { logo: "/Enterprise.png", price: "35", user: "2", name: "Enterprise", description: "For established organizations in need of extra flexibity and control", buttonText: "Book a Demo", includes: "enterprise", includeItems: ["Audit logs, query controls", "Analytics & feedback data", "Priority support", "Dedicated success manager", "Personalized onboarding", "Service level agreement", "Prioritized integration requests"] },
     ]
 
+    const [sidebarOpen, setSidebarOpen] = useState(false)
+
     return (
         <div className="min-h-screen w-full font-sans items-center flex flex-col bg-black">
             <div className="flex flex-col w-7/10">
                 <header className="flex h-20 items-center justify-between relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-transparent after:via-white after:to-transparent">
                     <h1 className="text-2xl font-semibold">Qatalog</h1>
-                    <nav className="space-x-6 text-base font-semibold">
+                    <nav className="space-x-6 text-base font-semibold hidden md:flex">
                         <a href="#" className="hover:text-gray-400">Product</a>
                         <a href="#" className="hover:text-gray-400">Resources</a>
                         <a href="#" className="hover:text-gray-400">Pricing</a>
                         <a href="#" className="hover:text-gray-400">About</a>
                     </nav>
-                    <div className="flex gap-4">
+                    <div className="md:flex gap-4 hidden">
                         <button className="flex items-center text-sm font-semibold">
                             LOGIN
                         </button>
@@ -43,7 +47,39 @@ export const Home = () => {
                             Get started
                         </button>
                     </div>
+                    <button className="md:hidden pr-3" onClick={() => setSidebarOpen(true)}>
+                        <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}
+                            viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </header>
+
+                {sidebarOpen && (
+                    <div
+                        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                        onClick={() => setSidebarOpen(false)}
+                    />
+                )}
+
+                <div className={`fixed top-0 left-0 h-full w-64 bg-gray-900 p-6 z-50 transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                    <button className="mb-6" onClick={() => setSidebarOpen(false)}>
+                        <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}
+                            viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <nav className="flex flex-col text-md gap-4">
+                        <a href="#" className="hover:font-semibold">Product</a>
+                        <a href="#" className="hover:font-semibold">Resources</a>
+                        <a href="#" className="hover:font-semibold">Pricing</a>
+                        <a href="#" className="hover:font-semibold">About</a>
+                    </nav>
+                    <button className="mt-10 flex gap-2 items-center">
+                        <div className="text-md font-semibold">ENTER APP</div>
+                    </button>
+                </div>
+
                 <main className="flex flex-col items-center w-full">
                     <section className="flex flex-col items-center justify-center w-full my-30">
                         <div className="text-center text-7xl font-semibold my-10">AI Powered Solutions Designed Specifically for Your Data</div>
@@ -203,7 +239,7 @@ export const Home = () => {
                             </div>
                         </li>
                         <li className="mb-2">
-                        <div className="bg-gradient-to-br from-gray-500 to-black border-gray-500 p-3 border-t border-l rounded-full">
+                            <div className="bg-gradient-to-br from-gray-500 to-black border-gray-500 p-3 border-t border-l rounded-full">
                                 <img src="/linkedin.png" alt="" className="w-5 h-5 filter invert" />
                             </div>
                         </li>
