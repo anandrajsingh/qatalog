@@ -28,3 +28,17 @@ jobs:
           context: .
           push: true
           tags: anandrajsingh/qatalog:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull anandrajsingh/qatalog:latest
+
+            docker stop qatalog || true
+            docker rm qatalog || true
+
+            docker run -d --name qatalog -p 30081:80 anandrajsingh/qatalog:latest 
