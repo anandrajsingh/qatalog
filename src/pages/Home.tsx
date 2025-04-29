@@ -40,7 +40,7 @@ export const Home = () => {
                         <a href="#" className="hover:text-gray-400">About</a>
                     </nav>
                     <div className="md:flex gap-4 hidden">
-                        <button className="flex items-center text-sm font-semibold">
+                        <button className="flex items-center text-sm font-semibold" >
                             LOGIN
                         </button>
                         <button className="flex bg-white text-black rounded-4xl py-3 px-3 items-center text-sm font-semibold">
